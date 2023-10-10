@@ -56,7 +56,8 @@ const Login = ({loggedInState, loggedInStates,setLoggedInState})=>{
             <TouchableOpacity
                style={styles.sendButton}
               onPress={async ()=>{
-                console.log(phoneNumber+' Button was pressed')
+                Myname = 'Izak Hearn'
+                console.log("Hello "+ Myname)
     
                 const sendTextResponse=await fetch(
                   'https://dev.stedi.me/twofactorlogin/'+phoneNumber,
@@ -69,7 +70,7 @@ const Login = ({loggedInState, loggedInStates,setLoggedInState})=>{
                 )
                 const sendTextResponseData = await sendTextResponse.text();
                 if(sendTextResponse.status!=200){//invalid phone number, send them to the signup page
-                  await Alert.alert("Did you type your number correctly? "+phoneNumber);
+                  await Alert.alert("Hello "+ Myname);
                 } else{
                   setLoggedInState(loggedInStates.LOGGING_IN);
                 }
@@ -77,7 +78,9 @@ const Login = ({loggedInState, loggedInStates,setLoggedInState})=>{
             >
               <Text style={{color:'white'}}>Send</Text>      
             </TouchableOpacity>
-    
+              
+              
+                
           </View>
         )
       }
@@ -138,8 +141,7 @@ const Login = ({loggedInState, loggedInStates,setLoggedInState})=>{
         <View>
           <Text>you logged in</Text>
         </View>
-      )}
-}
+      )}}
 
 export default Login
 
