@@ -4,9 +4,13 @@
   "description": "This is a CIT262 NodeJS Example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "hello": "node helloworld.js"
   },
   "author": "Izak Hearn",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.2.0"
+  },
+  "type": "module"
 }
